@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "12b6d5f0560475255408",
+  "position": {
+    "x": 9.2552770821172352,
+    "y": 0,
+    "z": 0,
+    "height": 83.297493739055113,
+    "width": 317.76451315269173,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "olist_order_reviews_dataset"
+                    }
+                  },
+                  "Property": "Note Moyenne Avis"
+                }
+              },
+              "queryRef": "olist_order_reviews_dataset.Note Moyenne Avis",
+              "nativeQueryRef": "Note Moyenne Avis"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "olist_order_reviews_dataset"
+                  }
+                },
+                "Property": "Note Moyenne Avis"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "58b3ea7bae6806bdbd82",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "olist_order_reviews_dataset"
+              }
+            },
+            "Property": "Note Moyenne Avis"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

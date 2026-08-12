@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "olist-ecommerce-pbi"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "153b2641-7e22-4689-99e9-c52ea0fb75ce"
+  }
+}

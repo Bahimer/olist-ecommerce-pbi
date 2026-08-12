@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "4a860150ab23c660206a",
+  "position": {
+    "x": 322.39215169375035,
+    "y": 0,
+    "z": 1,
+    "height": 83.297493739055113,
+    "width": 317.76451315269173,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "olist_order_reviews_dataset"
+                    }
+                  },
+                  "Property": "Avis Positifs %"
+                }
+              },
+              "queryRef": "olist_order_reviews_dataset.Avis Positifs %",
+              "nativeQueryRef": "Avis Positifs %"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "olist_order_reviews_dataset"
+                  }
+                },
+                "Property": "Avis Positifs %"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "15c7e47d3903c70cb900",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "olist_order_reviews_dataset"
+              }
+            },
+            "Property": "Avis Positifs %"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

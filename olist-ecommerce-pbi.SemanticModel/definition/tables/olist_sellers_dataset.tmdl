@@ -1,0 +1,74 @@
+table olist_sellers_dataset
+	lineageTag: 99f26db9-f3bc-49a7-a944-2cefdcbea36f
+
+	measure 'Nb Vendeurs Actifs' = DISTINCTCOUNT(olist_order_items_dataset[seller_id])
+		formatString: 0
+		lineageTag: 1c5cd051-ba4a-449e-b7f8-7c723b94b8cf
+
+	measure 'Nb Articles Vendus' = COUNTROWS(olist_order_items_dataset)
+		formatString: 0
+		lineageTag: 694fa62b-b75d-45fe-8dd4-20035d2e523a
+
+	measure 'Rang Vendeur (CA)' = RANKX(ALL(olist_sellers_dataset), [CA Total], , DESC, DENSE)
+		formatString: 0
+		lineageTag: efda3598-c6d5-48b4-acfb-d1b059b8176c
+
+	measure '% du CA Total' = DIVIDE([CA Total], CALCULATE([CA Total], ALL(olist_sellers_dataset)))
+		lineageTag: 4d4ad04f-7ca8-4a47-959b-68c7eb482219
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Délai Livraison Moyen par Vendeur' = CALCULATE([Délai Livraison Moyen (jours)], CROSSFILTER(olist_order_items_dataset[order_id], olist_orders_dataset[order_id], BOTH))
+		lineageTag: a5a3dfdf-878d-46e3-bc70-c845fe9b81fa
+
+	measure 'Note Moyenne Avis par Vendeur' = CALCULATE([Note Moyenne Avis], CROSSFILTER(olist_order_items_dataset[order_id], olist_orders_dataset[order_id], BOTH))
+		lineageTag: 017bb461-4262-4a8c-804d-fd17d6ff6158
+
+	column seller_id
+		dataType: string
+		lineageTag: 4e96651b-2f64-4be3-acff-770e19fe0a45
+		summarizeBy: none
+		sourceColumn: seller_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column seller_zip_code_prefix
+		dataType: int64
+		formatString: 0
+		lineageTag: 07c2bc56-0337-42b0-914e-07d241c55a83
+		summarizeBy: none
+		sourceColumn: seller_zip_code_prefix
+
+		annotation SummarizationSetBy = Automatic
+
+	column seller_city
+		dataType: string
+		lineageTag: 0be6cdea-255b-4181-82a9-d58ce1e6caf3
+		summarizeBy: none
+		sourceColumn: seller_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column seller_state
+		dataType: string
+		lineageTag: 43c369d6-a186-43f5-861a-53d50a92c773
+		summarizeBy: none
+		sourceColumn: seller_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendeur Label' = "Vendeur #" & [Rang Vendeur (CA)] & " (" & olist_sellers_dataset[seller_city] & ")"
+		lineageTag: 11828b20-f89c-49d1-b54c-0270304007c9
+
+	partition olist_sellers_dataset = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\brmer\Desktop\PL300\archive\olist_sellers_dataset.csv"),[Delimiter=",", Columns=4, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"En-têtes promus" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"seller_id", type text}, {"seller_zip_code_prefix", Int64.Type}, {"seller_city", type text}, {"seller_state", type text}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

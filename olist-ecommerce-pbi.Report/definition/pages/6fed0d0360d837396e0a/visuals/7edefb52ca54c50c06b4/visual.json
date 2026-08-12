@@ -1,0 +1,107 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "7edefb52ca54c50c06b4",
+  "position": {
+    "x": 0,
+    "y": 83.297493739055113,
+    "z": 4,
+    "height": 637.0715724857364,
+    "width": 350.15798294010204,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "olist_order_reviews_dataset"
+                    }
+                  },
+                  "Property": "review_score"
+                }
+              },
+              "queryRef": "olist_order_reviews_dataset.review_score",
+              "nativeQueryRef": "Somme de review_score",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "olist_order_reviews_dataset"
+                    }
+                  },
+                  "Property": "Nb Avis"
+                }
+              },
+              "queryRef": "olist_order_reviews_dataset.Nb Avis",
+              "nativeQueryRef": "Nb Avis"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "olist_order_reviews_dataset"
+                  }
+                },
+                "Property": "Nb Avis"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b884e17286118a96c3ba",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "olist_order_reviews_dataset"
+              }
+            },
+            "Property": "review_score"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4f60913cee9018024240",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "olist_order_reviews_dataset"
+              }
+            },
+            "Property": "Nb Avis"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

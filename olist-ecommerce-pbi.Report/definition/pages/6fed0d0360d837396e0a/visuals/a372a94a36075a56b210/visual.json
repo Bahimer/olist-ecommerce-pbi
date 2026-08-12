@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "a372a94a36075a56b210",
+  "position": {
+    "x": 962.54881654019243,
+    "y": 0,
+    "z": 3,
+    "height": 83.297493739055113,
+    "width": 317.76451315269173,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "olist_order_reviews_dataset"
+                    }
+                  },
+                  "Property": "Taux de Retard %"
+                }
+              },
+              "queryRef": "olist_order_reviews_dataset.Taux de Retard %",
+              "nativeQueryRef": "Taux de Retard %"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "olist_order_reviews_dataset"
+                  }
+                },
+                "Property": "Taux de Retard %"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "93b844d29428a55199d0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "olist_order_reviews_dataset"
+              }
+            },
+            "Property": "Taux de Retard %"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

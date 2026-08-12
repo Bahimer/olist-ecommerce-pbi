@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "b75ab0226977204b999e",
+  "position": {
+    "x": 640.15666484644214,
+    "y": 0,
+    "z": 2,
+    "height": 83.297493739055113,
+    "width": 296.16886662775153,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "olist_order_reviews_dataset"
+                    }
+                  },
+                  "Property": "Délai Livraison Moyen (jours)"
+                }
+              },
+              "queryRef": "olist_order_reviews_dataset.Délai Livraison Moyen (jours)",
+              "nativeQueryRef": "Délai Livraison Moyen (jours)"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "olist_order_reviews_dataset"
+                  }
+                },
+                "Property": "Délai Livraison Moyen (jours)"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "80a9f42aedc0b645c0b4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "olist_order_reviews_dataset"
+              }
+            },
+            "Property": "Délai Livraison Moyen (jours)"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

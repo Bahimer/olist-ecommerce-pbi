@@ -1,0 +1,98 @@
+table olist_order_reviews_dataset
+	lineageTag: abdda635-11e1-47fb-a154-165c9db49d3f
+
+	measure 'Note Moyenne Avis' = AVERAGE(olist_order_reviews_dataset[review_score])
+		lineageTag: efb03d79-29d4-4496-a3df-aa3a36de7384
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Nb Avis' = COUNTROWS(olist_order_reviews_dataset)
+		formatString: 0
+		lineageTag: 43773539-2547-4b02-b6d5-f3743fde3d05
+
+	measure 'Avis Positifs %' = DIVIDE(CALCULATE(COUNTROWS(olist_order_reviews_dataset), olist_order_reviews_dataset[review_score] >= 4), [Nb Avis])
+		lineageTag: 37fbdff1-83ed-4049-82be-756621c32774
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Délai Livraison Moyen (jours)' = AVERAGEX(olist_orders_dataset, DATEDIFF(olist_orders_dataset[order_purchase_timestamp], olist_orders_dataset[order_delivered_customer_date], DAY))
+		lineageTag: feea4b2d-9a75-460a-a5b2-e8c561f93426
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Taux de Retard %' = VAR CommandesLivrees = CALCULATE(COUNTROWS(olist_orders_dataset), olist_orders_dataset[order_status] = "delivered") VAR CommandesEnRetard = CALCULATE(COUNTROWS(olist_orders_dataset), olist_orders_dataset[order_status] = "delivered", olist_orders_dataset[order_delivered_customer_date] > olist_orders_dataset[order_estimated_delivery_date]) RETURN DIVIDE(CommandesEnRetard, CommandesLivrees)
+		lineageTag: d789ecc3-eb3d-45a7-bb56-706edbce1225
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column review_id
+		dataType: string
+		lineageTag: d5dea7d8-e263-46c1-8aa4-344711ccd093
+		summarizeBy: none
+		sourceColumn: review_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_id
+		dataType: string
+		lineageTag: 35706abc-d309-409e-813b-75a5e307ef8f
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_score
+		dataType: int64
+		formatString: 0
+		lineageTag: a4c14dcb-d391-4540-8c60-5ce8509c0425
+		summarizeBy: sum
+		sourceColumn: review_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_comment_title
+		dataType: string
+		lineageTag: c1456f9c-a9bb-4d0b-9aa4-0037293c7a16
+		summarizeBy: none
+		sourceColumn: review_comment_title
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_comment_message
+		dataType: string
+		lineageTag: 5060dea6-f937-490e-8948-a32b2eb01983
+		summarizeBy: none
+		sourceColumn: review_comment_message
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_creation_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8ebb9d3d-0dde-4123-8ce6-b3a5beec4904
+		summarizeBy: none
+		sourceColumn: review_creation_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_answer_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fa02aa54-e497-4f1a-afa7-e940b17eee9d
+		summarizeBy: none
+		sourceColumn: review_answer_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	partition olist_order_reviews_dataset = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\brmer\Desktop\PL300\archive\olist_order_reviews_dataset.csv"),[Delimiter=",", Columns=7, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"En-têtes promus" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"review_id", type text}, {"order_id", type text}, {"review_score", Int64.Type}, {"review_comment_title", type text}, {"review_comment_message", type text}, {"review_creation_date", type datetime}, {"review_answer_timestamp", type datetime}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

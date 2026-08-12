@@ -1,0 +1,132 @@
+table olist_orders_dataset
+	lineageTag: 600a38e9-b0dc-403e-a371-290cd0817abb
+
+	measure 'Nb Commandes' = DISTINCTCOUNT(olist_orders_dataset[order_id])
+		formatString: 0
+		lineageTag: 61027088-88ac-4879-ba9b-d4af0fac10c7
+
+	measure 'CA Total' = SUM(olist_order_items_dataset[price])
+		lineageTag: b7a6a8e6-ca4f-4e80-ada3-b538f12e46d2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Frais de Port Total' = SUM(olist_order_items_dataset[freight_value])
+		lineageTag: 594c3c9e-3032-454c-b991-d57de58ba31f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Panier Moyen' = DIVIDE([CA Total], [Nb Commandes])
+		lineageTag: f8541be8-1cc3-4c19-b2ec-fedd1e3c1df9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Nb Clients Uniques' = DISTINCTCOUNT(olist_customers_dataset[customer_unique_id])
+		formatString: 0
+		lineageTag: db2f425d-8321-4d9e-9a0f-11f707d97834
+
+	measure 'CA Total YTD' = TOTALYTD([CA Total], DimDate[Date])
+		lineageTag: 53bf9dbd-9cc5-4131-8d42-5d2403be2467
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'CA Total MTD' = TOTALMTD([CA Total], DimDate[Date])
+		lineageTag: 1d3e1d9e-90a1-48e4-a98f-4a55e060885d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'CA Année Précédente' = CALCULATE([CA Total], SAMEPERIODLASTYEAR(DimDate[Date]))
+		lineageTag: 22a7df53-f0c9-4b36-8e09-52f3010ecf4e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Croissance CA YoY %' = DIVIDE([CA Total] - [CA Année Précédente], [CA Année Précédente])
+		lineageTag: 85cdf554-a45b-4abf-8ce1-1ae09df2bc84
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'CA Mois Précédent' = CALCULATE([CA Total], DATEADD(DimDate[Date], -1, MONTH))
+		lineageTag: be34bd25-68d8-4aeb-a08b-07d2f87fabcc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_id
+		dataType: string
+		lineageTag: c8a3574b-ab8c-4e93-9492-9e78ccde3d62
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: 469a291b-a015-4a4c-b6a9-e50f24ed5d99
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_status
+		dataType: string
+		lineageTag: d1f6b103-2c07-4396-b12d-0f339d572a05
+		summarizeBy: none
+		sourceColumn: order_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_purchase_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5c63ed9a-be65-4eea-ae77-b3f6908a4bdb
+		summarizeBy: none
+		sourceColumn: order_purchase_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_approved_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0c36525c-1982-41da-9a6f-f2ab797f2966
+		summarizeBy: none
+		sourceColumn: order_approved_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_delivered_carrier_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 32d91a0a-e4c3-404d-acbd-e5916c9f6e30
+		summarizeBy: none
+		sourceColumn: order_delivered_carrier_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_delivered_customer_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 30455678-29cb-4fe9-87ea-175aaede5539
+		summarizeBy: none
+		sourceColumn: order_delivered_customer_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_estimated_delivery_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: dd25c3b0-eb05-4ae2-8e2c-475e02cf351d
+		summarizeBy: none
+		sourceColumn: order_estimated_delivery_date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition olist_orders_dataset = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\brmer\Desktop\PL300\archive\olist_orders_dataset.csv"),[Delimiter=",", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"En-têtes promus" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"order_id", type text}, {"customer_id", type text}, {"order_status", type text}, {"order_purchase_timestamp", type datetime}, {"order_approved_at", type datetime}, {"order_delivered_carrier_date", type datetime}, {"order_delivered_customer_date", type datetime}, {"order_estimated_delivery_date", type datetime}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

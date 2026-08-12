@@ -1,0 +1,152 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 142.08574438181995,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 50
+          },
+          "nodeIndex": "olist_customers_dataset",
+          "nodeLineageTag": "5fb16568-0f29-4927-b6a6-903a7083a4e5",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 284,
+            "y": 50
+          },
+          "nodeIndex": "olist_geolocation_dataset",
+          "nodeLineageTag": "394b58ca-43af-43b0-a19c-5e728734f46f",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 568,
+            "y": 26
+          },
+          "nodeIndex": "olist_order_items_dataset",
+          "nodeLineageTag": "3a3e335b-bdbe-4666-a2a6-7a2d7cab67ed",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 852,
+            "y": 50
+          },
+          "nodeIndex": "olist_order_payments_dataset",
+          "nodeLineageTag": "e849137e-32be-45a0-87b1-4dddf065870a",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1136,
+            "y": 26
+          },
+          "nodeIndex": "olist_order_reviews_dataset",
+          "nodeLineageTag": "abdda635-11e1-47fb-a154-165c9db49d3f",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1420,
+            "y": 14
+          },
+          "nodeIndex": "olist_orders_dataset",
+          "nodeLineageTag": "600a38e9-b0dc-403e-a371-290cd0817abb",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1704,
+            "y": 2
+          },
+          "nodeIndex": "olist_products_dataset",
+          "nodeLineageTag": "f8e44c7a-30da-4f37-9702-030395d5cb4d",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1988,
+            "y": 62
+          },
+          "nodeIndex": "olist_sellers_dataset",
+          "nodeLineageTag": "99f26db9-f3bc-49a7-a944-2cefdcbea36f",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2272,
+            "y": 86
+          },
+          "nodeIndex": "product_category_name_translation",
+          "nodeLineageTag": "89b3155a-ca68-4a58-bf54-8dd38f66ecb3",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2556,
+            "y": 0
+          },
+          "nodeIndex": "DimDate",
+          "nodeLineageTag": "1d3466cb-ea9c-434f-97f7-b7fec04e47d7",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Toutes les tables",
+      "zoomValue": 44.905697313103992,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Toutes les tables",
+  "defaultDiagram": "Toutes les tables"
+}

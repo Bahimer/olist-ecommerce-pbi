@@ -1,0 +1,60 @@
+relationship AutoDetected_586a84fd-dfe5-459c-b08f-9ca9245eec21
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: olist_orders_dataset.customer_id
+	toColumn: olist_customers_dataset.customer_id
+
+relationship AutoDetected_177b44e8-b55e-4844-8272-2f2d2db89299
+	fromColumn: olist_order_items_dataset.order_id
+	toColumn: olist_orders_dataset.order_id
+
+relationship AutoDetected_de8a5cdb-e873-4249-b6e8-6179ab4988c4
+	fromColumn: olist_order_payments_dataset.order_id
+	toColumn: olist_orders_dataset.order_id
+
+relationship AutoDetected_fe76e3ce-771d-437b-8b1e-416a84440934
+	fromColumn: olist_order_reviews_dataset.order_id
+	toColumn: olist_orders_dataset.order_id
+
+relationship AutoDetected_bf378730-a83a-40d4-b149-c909e73c3798
+	fromColumn: olist_order_items_dataset.product_id
+	toColumn: olist_products_dataset.product_id
+
+relationship AutoDetected_7b96e69e-8ee4-4b1a-b67b-00cd6bd18265
+	fromColumn: olist_order_items_dataset.seller_id
+	toColumn: olist_sellers_dataset.seller_id
+
+relationship b387e544-5ab6-7df2-07a5-0b05359046b8
+	fromColumn: olist_products_dataset.product_category_name
+	toColumn: product_category_name_translation.product_category_name
+
+relationship olist_orders_dataset_order_purchase_timestamp_DimDate_Date
+	joinOnDateBehavior: datePartOnly
+	fromColumn: olist_orders_dataset.order_purchase_timestamp
+	toColumn: DimDate.Date
+
+relationship olist_orders_dataset_order_approved_at_DimDate_Date
+	isActive: false
+	fromColumn: olist_orders_dataset.order_approved_at
+	toColumn: DimDate.Date
+
+relationship olist_orders_dataset_order_delivered_customer_date_DimDate_Date
+	isActive: false
+	fromColumn: olist_orders_dataset.order_delivered_customer_date
+	toColumn: DimDate.Date
+
+relationship olist_orders_dataset_order_estimated_delivery_date_DimDate_Date
+	isActive: false
+	fromColumn: olist_orders_dataset.order_estimated_delivery_date
+	toColumn: DimDate.Date
+
+relationship olist_order_items_dataset_shipping_limit_date_DimDate_Date
+	isActive: false
+	fromColumn: olist_order_items_dataset.shipping_limit_date
+	toColumn: DimDate.Date
+
+relationship olist_order_reviews_dataset_review_creation_date_DimDate_Date
+	isActive: false
+	fromColumn: olist_order_reviews_dataset.review_creation_date
+	toColumn: DimDate.Date
+

@@ -1,0 +1,81 @@
+table DimDate
+	lineageTag: 1d3466cb-ea9c-434f-97f7-b7fec04e47d7
+	dataCategory: Time
+
+	column Date
+		isUnique
+		lineageTag: ca213203-4de9-42f5-8961-514db59023c7
+		isNameInferred
+		sourceColumn: [Date]
+
+	column Année
+		lineageTag: 9a1ef260-5e75-49a0-b1db-72e22adb7dcb
+		isNameInferred
+		sourceColumn: [Année]
+
+	column NuméroMois
+		lineageTag: 9b00f47b-e204-4070-9ff6-185bd35ad794
+		isNameInferred
+		sourceColumn: [NuméroMois]
+
+	column Mois
+		lineageTag: 85b0c314-1470-4a14-a9ef-f08a47eed88e
+		isNameInferred
+		sourceColumn: [Mois]
+		sortByColumn: NuméroMois
+
+	column MoisAbrégé
+		lineageTag: d338c9b8-088b-45e3-bf27-ce7644c1cb1f
+		isNameInferred
+		sourceColumn: [MoisAbrégé]
+		sortByColumn: NuméroMois
+
+	column NuméroTrimestre
+		lineageTag: e7c928b5-d1c4-4748-8640-48968c22e4ae
+		isNameInferred
+		sourceColumn: [NuméroTrimestre]
+
+	column Trimestre
+		lineageTag: ac30f0c9-99d3-4973-9f61-00ae3cddd1d6
+		isNameInferred
+		sourceColumn: [Trimestre]
+		sortByColumn: NuméroTrimestre
+
+	column Jour
+		lineageTag: 251a393f-64f6-42b5-b986-afae4cc99f26
+		isNameInferred
+		sourceColumn: [Jour]
+
+	column JourSemaine
+		lineageTag: c9bc7450-03dd-494e-bb5e-237a9f06a458
+		isNameInferred
+		sourceColumn: [JourSemaine]
+		sortByColumn: NuméroJourSemaine
+
+	column NuméroJourSemaine
+		lineageTag: 4f1b6bbd-631f-4961-aa6d-1c9530a1c2c6
+		isNameInferred
+		sourceColumn: [NuméroJourSemaine]
+
+	column AnnéeMois
+		lineageTag: 6bafdd9a-691a-4a27-bfc8-71e06e353f39
+		isNameInferred
+		sourceColumn: [AnnéeMois]
+
+	partition DimDate = calculated
+		mode: import
+		source =
+				ADDCOLUMNS(
+				    CALENDAR(DATE(2016,1,1), DATE(2019,12,31)),
+				    "Année", YEAR([Date]),
+				    "NuméroMois", MONTH([Date]),
+				    "Mois", FORMAT([Date], "MMMM"),
+				    "MoisAbrégé", FORMAT([Date], "MMM"),
+				    "NuméroTrimestre", ROUNDUP(MONTH([Date])/3,0),
+				    "Trimestre", "T" & ROUNDUP(MONTH([Date])/3,0),
+				    "Jour", DAY([Date]),
+				    "JourSemaine", FORMAT([Date], "dddd"),
+				    "NuméroJourSemaine", WEEKDAY([Date], 2),
+				    "AnnéeMois", FORMAT([Date], "YYYY-MM")
+				)
+

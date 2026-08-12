@@ -1,0 +1,84 @@
+table olist_order_items_dataset
+	lineageTag: 3a3e335b-bdbe-4666-a2a6-7a2d7cab67ed
+
+	measure 'CA Top 10 Vendeurs' = CALCULATE([CA Total], TOPN(10, ALL(olist_sellers_dataset[seller_id]), [CA Total], DESC))
+		lineageTag: f266d098-fae5-4495-b8f0-10ef50137c06
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_id
+		dataType: string
+		lineageTag: 2d50eacd-ffa0-44f2-8002-27f70d576494
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_item_id
+		dataType: string
+		lineageTag: 30c8f36d-1f88-4764-a753-4d3abc07aa33
+		summarizeBy: none
+		sourceColumn: order_item_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: string
+		lineageTag: 4d396d6d-2bee-4114-b9b8-811bc4ee6244
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column seller_id
+		dataType: string
+		lineageTag: 9fe6a5b6-a9cc-4c5e-94ea-9880e37a7cf2
+		summarizeBy: none
+		sourceColumn: seller_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column shipping_limit_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 02c18c8b-3be5-4be6-9af6-00df82ec3dc3
+		summarizeBy: none
+		sourceColumn: shipping_limit_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column price
+		dataType: double
+		lineageTag: 68ec5dd9-a091-40b0-9496-13e2853bb6c8
+		summarizeBy: sum
+		sourceColumn: price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column freight_value
+		dataType: double
+		lineageTag: 2cf5bfa1-4e7d-42fb-8b13-97f7fb6076d5
+		summarizeBy: sum
+		sourceColumn: freight_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition olist_order_items_dataset = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\brmer\Desktop\PL300\archive\olist_order_items_dataset.csv"),[Delimiter=",", Columns=7, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"En-têtes promus" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Type modifié avec paramètres régionaux" = Table.TransformColumnTypes(#"En-têtes promus", {{"price", type number}, {"freight_value", type number}}, "en-US"),
+				    #"Type modifié" = Table.TransformColumnTypes(#"Type modifié avec paramètres régionaux",{{"shipping_limit_date", type datetime}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
