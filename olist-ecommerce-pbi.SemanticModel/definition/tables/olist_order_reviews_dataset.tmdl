@@ -2,28 +2,24 @@ table olist_order_reviews_dataset
 	lineageTag: abdda635-11e1-47fb-a154-165c9db49d3f
 
 	measure 'Note Moyenne Avis' = AVERAGE(olist_order_reviews_dataset[review_score])
+		formatString: 0.00
 		lineageTag: efb03d79-29d4-4496-a3df-aa3a36de7384
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Nb Avis' = COUNTROWS(olist_order_reviews_dataset)
 		formatString: 0
 		lineageTag: 43773539-2547-4b02-b6d5-f3743fde3d05
 
 	measure 'Avis Positifs %' = DIVIDE(CALCULATE(COUNTROWS(olist_order_reviews_dataset), olist_order_reviews_dataset[review_score] >= 4), [Nb Avis])
+		formatString: 0.0 %
 		lineageTag: 37fbdff1-83ed-4049-82be-756621c32774
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure 'Délai Livraison Moyen (jours)' = AVERAGEX(olist_orders_dataset, DATEDIFF(olist_orders_dataset[order_purchase_timestamp], olist_orders_dataset[order_delivered_customer_date], DAY))
+		formatString: 0.0
 		lineageTag: feea4b2d-9a75-460a-a5b2-e8c561f93426
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure 'Taux de Retard %' = VAR CommandesLivrees = CALCULATE(COUNTROWS(olist_orders_dataset), olist_orders_dataset[order_status] = "delivered") VAR CommandesEnRetard = CALCULATE(COUNTROWS(olist_orders_dataset), olist_orders_dataset[order_status] = "delivered", olist_orders_dataset[order_delivered_customer_date] > olist_orders_dataset[order_estimated_delivery_date]) RETURN DIVIDE(CommandesEnRetard, CommandesLivrees)
+		formatString: 0.0 %
 		lineageTag: d789ecc3-eb3d-45a7-bb56-706edbce1225
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column review_id
 		dataType: string

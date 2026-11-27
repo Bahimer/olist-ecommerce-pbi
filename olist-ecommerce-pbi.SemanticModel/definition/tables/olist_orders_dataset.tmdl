@@ -6,48 +6,40 @@ table olist_orders_dataset
 		lineageTag: 61027088-88ac-4879-ba9b-d4af0fac10c7
 
 	measure 'CA Total' = SUM(olist_order_items_dataset[price])
+		formatString: "R$" #,0
 		lineageTag: b7a6a8e6-ca4f-4e80-ada3-b538f12e46d2
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure 'Frais de Port Total' = SUM(olist_order_items_dataset[freight_value])
+		formatString: "R$" #,0
 		lineageTag: 594c3c9e-3032-454c-b991-d57de58ba31f
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure 'Panier Moyen' = DIVIDE([CA Total], [Nb Commandes])
+		formatString: "R$" #,0.00
 		lineageTag: f8541be8-1cc3-4c19-b2ec-fedd1e3c1df9
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Nb Clients Uniques' = DISTINCTCOUNT(olist_customers_dataset[customer_unique_id])
 		formatString: 0
 		lineageTag: db2f425d-8321-4d9e-9a0f-11f707d97834
 
 	measure 'CA Total YTD' = TOTALYTD([CA Total], DimDate[Date])
+		formatString: "R$" #,0
 		lineageTag: 53bf9dbd-9cc5-4131-8d42-5d2403be2467
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure 'CA Total MTD' = TOTALMTD([CA Total], DimDate[Date])
+		formatString: "R$" #,0
 		lineageTag: 1d3e1d9e-90a1-48e4-a98f-4a55e060885d
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure 'CA Année Précédente' = CALCULATE([CA Total], SAMEPERIODLASTYEAR(DimDate[Date]))
+		formatString: "R$" #,0
 		lineageTag: 22a7df53-f0c9-4b36-8e09-52f3010ecf4e
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure 'Croissance CA YoY %' = DIVIDE([CA Total] - [CA Année Précédente], [CA Année Précédente])
+		formatString: +0.0 %;-0.0 %;0.0 %
 		lineageTag: 85cdf554-a45b-4abf-8ce1-1ae09df2bc84
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure 'CA Mois Précédent' = CALCULATE([CA Total], DATEADD(DimDate[Date], -1, MONTH))
+		formatString: "R$" #,0
 		lineageTag: be34bd25-68d8-4aeb-a08b-07d2f87fabcc
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column order_id
 		dataType: string

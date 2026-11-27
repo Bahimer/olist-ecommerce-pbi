@@ -14,14 +14,15 @@ table olist_sellers_dataset
 		lineageTag: efda3598-c6d5-48b4-acfb-d1b059b8176c
 
 	measure '% du CA Total' = DIVIDE([CA Total], CALCULATE([CA Total], ALL(olist_sellers_dataset)))
+		formatString: 0.00 %
 		lineageTag: 4d4ad04f-7ca8-4a47-959b-68c7eb482219
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure 'Délai Livraison Moyen par Vendeur' = CALCULATE([Délai Livraison Moyen (jours)], CROSSFILTER(olist_order_items_dataset[order_id], olist_orders_dataset[order_id], BOTH))
+		formatString: 0.0
 		lineageTag: a5a3dfdf-878d-46e3-bc70-c845fe9b81fa
 
 	measure 'Note Moyenne Avis par Vendeur' = CALCULATE([Note Moyenne Avis], CROSSFILTER(olist_order_items_dataset[order_id], olist_orders_dataset[order_id], BOTH))
+		formatString: 0.00
 		lineageTag: 017bb461-4262-4a8c-804d-fd17d6ff6158
 
 	column seller_id

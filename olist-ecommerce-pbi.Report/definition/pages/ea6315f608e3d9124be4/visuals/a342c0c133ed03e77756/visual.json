@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "a342c0c133ed03e77756",
   "position": {
-    "x": 4.6276385410586176,
-    "y": 172.76517219952171,
-    "z": 0,
-    "height": 547.60389402526971,
-    "width": 513.66787805750653,
-    "tabOrder": 0
+    "x": 16,
+    "y": 204,
+    "z": 3000,
+    "height": 500,
+    "width": 520,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "columnChart",
@@ -70,7 +70,29 @@
         "isDefaultSort": true
       }
     },
-    "drillFilterOtherVisuals": true
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Chiffre d''affaires par vendeur'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
   },
   "filterConfig": {
     "filters": [

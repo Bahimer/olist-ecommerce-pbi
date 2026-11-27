@@ -2,9 +2,8 @@ table olist_order_items_dataset
 	lineageTag: 3a3e335b-bdbe-4666-a2a6-7a2d7cab67ed
 
 	measure 'CA Top 10 Vendeurs' = CALCULATE([CA Total], TOPN(10, ALL(olist_sellers_dataset[seller_id]), [CA Total], DESC))
+		formatString: "R$" #,0
 		lineageTag: f266d098-fae5-4495-b8f0-10ef50137c06
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column order_id
 		dataType: string

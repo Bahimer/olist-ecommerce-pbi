@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "85f2cfb6449e1213e1e9",
   "position": {
-    "x": 629,
-    "y": 173,
-    "z": 2001,
-    "height": 547,
-    "width": 651,
-    "tabOrder": 2001
+    "x": 548,
+    "y": 204,
+    "z": 4000,
+    "height": 500,
+    "width": 716,
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "decompositionTreeVisual",
@@ -162,7 +162,29 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Décomposition du CA : catégorie, puis vendeur'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
   },
   "filterConfig": {
     "filters": [

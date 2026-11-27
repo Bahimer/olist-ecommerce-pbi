@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "7edefb52ca54c50c06b4",
   "position": {
-    "x": 0,
-    "y": 83.297493739055113,
-    "z": 4,
-    "height": 637.0715724857364,
-    "width": 350.15798294010204,
-    "tabOrder": 4
+    "x": 16,
+    "y": 204,
+    "z": 5000,
+    "height": 500,
+    "width": 400,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -70,7 +70,29 @@
         "isDefaultSort": true
       }
     },
-    "drillFilterOtherVisuals": true
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Répartition des notes clients (1 à 5)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
   },
   "filterConfig": {
     "filters": [

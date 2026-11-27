@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "01092154879b53dd752d",
   "position": {
-    "x": 0,
-    "y": 248.34993503681247,
-    "z": 3000,
-    "height": 472.019131187979,
-    "width": 1280.3133296928843,
-    "tabOrder": 3000
+    "x": 16,
+    "y": 204,
+    "z": 5000,
+    "height": 500,
+    "width": 1248,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "lineChart",
@@ -97,6 +97,28 @@
         ]
       }
     },
-    "drillFilterOtherVisuals": true
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Évolution mensuelle du chiffre d''affaires'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
   }
 }

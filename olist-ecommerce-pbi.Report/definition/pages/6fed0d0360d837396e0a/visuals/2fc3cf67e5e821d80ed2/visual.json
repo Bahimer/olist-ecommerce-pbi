@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "2fc3cf67e5e821d80ed2",
   "position": {
-    "x": 350.15798294010204,
-    "y": 83.297493739055113,
-    "z": 5,
-    "height": 171.22262601916884,
-    "width": 930.15534675278218,
-    "tabOrder": 5
+    "x": 428,
+    "y": 204,
+    "z": 6000,
+    "height": 150,
+    "width": 836,
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "gauge",
@@ -51,7 +51,29 @@
         "isDefaultSort": true
       }
     },
-    "drillFilterOtherVisuals": true
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Taux de retard de livraison'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
   },
   "filterConfig": {
     "filters": [
