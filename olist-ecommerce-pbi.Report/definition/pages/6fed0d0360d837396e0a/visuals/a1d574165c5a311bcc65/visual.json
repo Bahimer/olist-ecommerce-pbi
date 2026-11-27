@@ -28,7 +28,8 @@
               },
               "queryRef": "olist_sellers_dataset.Vendeur Label",
               "nativeQueryRef": "Vendeur Label",
-              "active": true
+              "active": true,
+              "displayName": "Vendeur"
             }
           ]
         },
@@ -88,7 +89,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Délai de livraison vs note moyenne, par vendeur'"
+                  "Value": "'Délai de livraison vs note moyenne (vendeurs ≥ 30 articles)'"
                 }
               }
             }
@@ -140,6 +141,54 @@
           }
         },
         "type": "Categorical"
+      },
+      {
+        "name": "fVendeurs30",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "olist_sellers_dataset"
+              }
+            },
+            "Property": "Nb Articles Vendus"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "s",
+              "Entity": "olist_sellers_dataset",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 2,
+                  "Left": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "s"
+                        }
+                      },
+                      "Property": "Nb Articles Vendus"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "30L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
       }
     ]
   }

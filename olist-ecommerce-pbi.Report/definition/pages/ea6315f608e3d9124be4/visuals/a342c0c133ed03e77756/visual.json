@@ -10,7 +10,7 @@
     "tabOrder": 3000
   },
   "visual": {
-    "visualType": "columnChart",
+    "visualType": "clusteredBarChart",
     "query": {
       "queryState": {
         "Category": {
@@ -28,7 +28,8 @@
               },
               "queryRef": "olist_sellers_dataset.Vendeur Label",
               "nativeQueryRef": "Vendeur Label",
-              "active": true
+              "active": true,
+              "displayName": "Vendeur"
             }
           ]
         },

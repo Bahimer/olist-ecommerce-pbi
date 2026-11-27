@@ -5,7 +5,7 @@
     "x": 16,
     "y": 12,
     "z": 0,
-    "width": 1248,
+    "width": 816,
     "height": 64,
     "tabOrder": 0
   },
@@ -22,7 +22,7 @@
                     "value": "Fiche vendeur",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "18pt",
+                      "fontSize": "15pt",
                       "color": "#0B2545"
                     }
                   }
@@ -34,7 +34,7 @@
                     "value": "Ouverte depuis la page Vendeurs : clic droit sur un vendeur › Extraire › Fiche vendeur",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "10pt",
+                      "fontSize": "9pt",
                       "color": "#5B6B82"
                     }
                   }
@@ -52,7 +52,14 @@
             "top": {
               "expr": {
                 "Literal": {
-                  "Value": "6D"
+                  "Value": "2D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             },
@@ -60,6 +67,13 @@
               "expr": {
                 "Literal": {
                   "Value": "16D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
                 }
               }
             }

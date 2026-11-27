@@ -47,7 +47,8 @@
               },
               "queryRef": "olist_products_dataset.product_category_name",
               "nativeQueryRef": "product_category_name",
-              "active": true
+              "active": true,
+              "displayName": "Catégorie"
             },
             {
               "field": {
@@ -62,7 +63,8 @@
               },
               "queryRef": "olist_sellers_dataset.Vendeur Label",
               "nativeQueryRef": "Vendeur Label",
-              "active": false
+              "active": false,
+              "displayName": "Vendeur"
             }
           ]
         }

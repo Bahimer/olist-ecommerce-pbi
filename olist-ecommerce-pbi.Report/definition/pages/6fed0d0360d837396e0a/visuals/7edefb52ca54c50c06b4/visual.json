@@ -28,7 +28,8 @@
               },
               "queryRef": "olist_order_reviews_dataset.review_score",
               "nativeQueryRef": "Somme de review_score",
-              "active": true
+              "active": true,
+              "displayName": "Note"
             }
           ]
         },
