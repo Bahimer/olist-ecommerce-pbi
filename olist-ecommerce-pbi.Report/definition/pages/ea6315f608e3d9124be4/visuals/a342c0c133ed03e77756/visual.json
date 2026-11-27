@@ -86,7 +86,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Chiffre d''affaires par vendeur'"
+                  "Value": "'CA par vendeur · clic droit › Extraire › Fiche vendeur'"
                 }
               }
             }

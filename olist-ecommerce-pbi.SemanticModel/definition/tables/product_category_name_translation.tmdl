@@ -17,6 +17,13 @@ table product_category_name_translation
 
 		annotation SummarizationSetBy = Automatic
 
+	column Catégorie = SUBSTITUTE(product_category_name_translation[product_category_name_english], "_", " ")
+		dataType: string
+		lineageTag: 9551f239-8f0f-480b-9619-3702f58b82bd
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition product_category_name_translation = m
 		mode: import
 		source =

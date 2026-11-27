@@ -1,0 +1,47 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "ficheVendeur00000001",
+  "displayName": "Fiche vendeur",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "dtVendeur",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "olist_sellers_dataset"
+              }
+            },
+            "Property": "Vendeur Label"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "pbFicheVendeur",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "prmVendeur",
+        "boundFilter": "dtVendeur",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "olist_sellers_dataset"
+              }
+            },
+            "Property": "Vendeur Label"
+          }
+        }
+      }
+    ]
+  }
+}

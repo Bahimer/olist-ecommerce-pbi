@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "fvRang",
+  "position": {
+    "x": 268.0,
+    "y": 88,
+    "z": 501,
+    "width": 240.0,
+    "height": 104,
+    "tabOrder": 501
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "olist_sellers_dataset"
+                    }
+                  },
+                  "Property": "Rang Vendeur (CA)"
+                }
+              },
+              "queryRef": "olist_sellers_dataset.Rang Vendeur (CA)",
+              "nativeQueryRef": "Rang Vendeur (CA)",
+              "displayName": "Rang (CA)"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
