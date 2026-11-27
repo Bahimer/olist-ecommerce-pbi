@@ -4,7 +4,7 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 142.08574438181995,
+        "x": 142.52089117726288,
         "y": 0
       },
       "nodes": [
@@ -15,19 +15,6 @@
           },
           "nodeIndex": "olist_customers_dataset",
           "nodeLineageTag": "5fb16568-0f29-4927-b6a6-903a7083a4e5",
-          "size": {
-            "height": 200,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 284,
-            "y": 50
-          },
-          "nodeIndex": "olist_geolocation_dataset",
-          "nodeLineageTag": "394b58ca-43af-43b0-a19c-5e728734f46f",
           "size": {
             "height": 200,
             "width": 234

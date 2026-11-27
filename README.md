@@ -47,7 +47,7 @@ Deux rôles statiques, `Responsable régional SP` et `Responsable régional RJ`,
 
 ## Actualiser le rapport sur n'importe quel PC
 
-Les requêtes Power Query ne dépendent plus d'un dossier local : les 9 CSV sont lus directement depuis le dépôt public d'Olist sur GitHub, via le paramètre `OlistDataUrl` :
+Les requêtes Power Query ne dépendent plus d'un dossier local : les 8 CSV utilisés sont lus directement depuis le dépôt public d'Olist sur GitHub, via le paramètre `OlistDataUrl` :
 
 ```
 https://raw.githubusercontent.com/olist/work-at-olist-data/master/datasets/
