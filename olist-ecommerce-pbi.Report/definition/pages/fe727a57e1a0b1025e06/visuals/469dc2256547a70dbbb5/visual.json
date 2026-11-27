@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "469dc2256547a70dbbb5",
   "position": {
-    "x": 16,
+    "x": 16.0,
     "y": 88,
-    "z": 1000,
+    "z": 500,
     "height": 104,
-    "width": 303.0,
-    "tabOrder": 1000
+    "width": 198.0,
+    "tabOrder": 500
   },
   "visual": {
     "visualType": "card",
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "olist_orders_dataset.CA Total",
-              "nativeQueryRef": "CA Total"
+              "nativeQueryRef": "CA Total",
+              "displayName": "Chiffre d'affaires"
             }
           ]
         }

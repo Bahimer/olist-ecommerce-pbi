@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "81d223f509929aa00eeb",
   "position": {
-    "x": 331.0,
+    "x": 226.0,
     "y": 88,
-    "z": 2000,
+    "z": 501,
     "height": 104,
-    "width": 303.0,
-    "tabOrder": 2000
+    "width": 198.0,
+    "tabOrder": 501
   },
   "visual": {
     "visualType": "card",
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "olist_orders_dataset.Nb Commandes",
-              "nativeQueryRef": "Nb Commandes"
+              "nativeQueryRef": "Nb Commandes",
+              "displayName": "Commandes"
             }
           ]
         }

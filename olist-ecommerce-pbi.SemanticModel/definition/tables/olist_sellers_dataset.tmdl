@@ -1,12 +1,20 @@
 table olist_sellers_dataset
 	lineageTag: 99f26db9-f3bc-49a7-a944-2cefdcbea36f
 
+	measure 'Part CA Top 10 Vendeurs %' = DIVIDE([CA Top 10 Vendeurs], [CA Total])
+		formatString: 0.0 %
+		lineageTag: ad14ebc4-c5ea-4e0b-8f3a-e7301e0fce26
+
+	measure 'CA Moyen par Vendeur' = DIVIDE([CA Total], [Nb Vendeurs Actifs])
+		formatString: "R$" #,0
+		lineageTag: 32a62903-bdc8-44dd-a791-9b7eb2760320
+
 	measure 'Nb Vendeurs Actifs' = DISTINCTCOUNT(olist_order_items_dataset[seller_id])
-		formatString: 0
+		formatString: #,0
 		lineageTag: 1c5cd051-ba4a-449e-b7f8-7c723b94b8cf
 
 	measure 'Nb Articles Vendus' = COUNTROWS(olist_order_items_dataset)
-		formatString: 0
+		formatString: #,0
 		lineageTag: 694fa62b-b75d-45fe-8dd4-20035d2e523a
 
 	measure 'Rang Vendeur (CA)' = RANKX(ALL(olist_sellers_dataset), [CA Total], , DESC, DENSE)

@@ -47,7 +47,8 @@
               },
               "queryRef": "olist_sellers_dataset.Délai Livraison Moyen par Vendeur",
               "nativeQueryRef": "Délai Livraison Moyen par Vendeur",
-              "active": true
+              "active": true,
+              "displayName": "Délai moyen de livraison (jours)"
             }
           ]
         },
@@ -65,7 +66,8 @@
                 }
               },
               "queryRef": "olist_sellers_dataset.Note Moyenne Avis par Vendeur",
-              "nativeQueryRef": "Note Moyenne Avis par Vendeur"
+              "nativeQueryRef": "Note Moyenne Avis par Vendeur",
+              "displayName": "Note moyenne (/5)"
             }
           ]
         }

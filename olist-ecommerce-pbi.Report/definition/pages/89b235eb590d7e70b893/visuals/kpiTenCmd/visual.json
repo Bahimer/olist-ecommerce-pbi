@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "kpiTenCmd",
+  "position": {
+    "x": 772.0,
+    "y": 88,
+    "z": 503,
+    "width": 240.0,
+    "height": 104,
+    "tabOrder": 503
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "olist_orders_dataset"
+                    }
+                  },
+                  "Property": "Nb Commandes"
+                }
+              },
+              "queryRef": "olist_orders_dataset.Nb Commandes",
+              "nativeQueryRef": "Nb Commandes",
+              "displayName": "Commandes"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

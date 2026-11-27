@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "4a860150ab23c660206a",
   "position": {
-    "x": 331.0,
+    "x": 520.0,
     "y": 88,
-    "z": 2000,
+    "z": 502,
     "height": 104,
-    "width": 303.0,
-    "tabOrder": 2000
+    "width": 240.0,
+    "tabOrder": 502
   },
   "visual": {
     "visualType": "card",
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "olist_order_reviews_dataset.Avis Positifs %",
-              "nativeQueryRef": "Avis Positifs %"
+              "nativeQueryRef": "Avis Positifs %",
+              "displayName": "Avis positifs (4-5)"
             }
           ]
         }

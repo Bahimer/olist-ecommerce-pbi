@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "kpiVenCA",
+  "position": {
+    "x": 520.0,
+    "y": 88,
+    "z": 502,
+    "width": 240.0,
+    "height": 104,
+    "tabOrder": 502
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "olist_orders_dataset"
+                    }
+                  },
+                  "Property": "CA Total"
+                }
+              },
+              "queryRef": "olist_orders_dataset.CA Total",
+              "nativeQueryRef": "CA Total",
+              "displayName": "Chiffre d'affaires"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

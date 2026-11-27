@@ -4,10 +4,10 @@
   "position": {
     "x": 646.0,
     "y": 88,
-    "z": 3000,
+    "z": 503,
     "height": 104,
-    "width": 303.0,
-    "tabOrder": 3000
+    "width": 198.0,
+    "tabOrder": 503
   },
   "visual": {
     "visualType": "card",
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "olist_orders_dataset.Panier Moyen",
-              "nativeQueryRef": "Panier Moyen"
+              "nativeQueryRef": "Panier Moyen",
+              "displayName": "Panier moyen"
             }
           ]
         }

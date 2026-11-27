@@ -61,7 +61,8 @@
                 }
               },
               "queryRef": "olist_orders_dataset.CA Total",
-              "nativeQueryRef": "CA Total"
+              "nativeQueryRef": "CA Total",
+              "displayName": "Chiffre d'affaires"
             },
             {
               "field": {
@@ -75,7 +76,8 @@
                 }
               },
               "queryRef": "olist_orders_dataset.CA Année Précédente",
-              "nativeQueryRef": "CA Année Précédente"
+              "nativeQueryRef": "CA Année Précédente",
+              "displayName": "CA année précédente"
             }
           ]
         }

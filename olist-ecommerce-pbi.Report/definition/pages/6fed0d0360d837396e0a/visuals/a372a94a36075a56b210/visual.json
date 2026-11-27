@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "a372a94a36075a56b210",
   "position": {
-    "x": 961.0,
+    "x": 1024.0,
     "y": 88,
-    "z": 4000,
+    "z": 504,
     "height": 104,
-    "width": 303.0,
-    "tabOrder": 4000
+    "width": 240.0,
+    "tabOrder": 504
   },
   "visual": {
     "visualType": "card",
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "olist_order_reviews_dataset.Taux de Retard %",
-              "nativeQueryRef": "Taux de Retard %"
+              "nativeQueryRef": "Taux de Retard %",
+              "displayName": "Commandes livrées en retard"
             }
           ]
         }

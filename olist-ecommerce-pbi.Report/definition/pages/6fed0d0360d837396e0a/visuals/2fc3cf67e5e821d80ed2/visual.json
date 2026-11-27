@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "olist_order_reviews_dataset.Taux de Retard %",
-              "nativeQueryRef": "Taux de Retard %"
+              "nativeQueryRef": "Taux de Retard %",
+              "displayName": "Commandes livrées en retard"
             }
           ]
         }

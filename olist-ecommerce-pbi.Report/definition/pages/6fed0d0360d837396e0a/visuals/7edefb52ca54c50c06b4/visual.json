@@ -46,7 +46,8 @@
                 }
               },
               "queryRef": "olist_order_reviews_dataset.Nb Avis",
-              "nativeQueryRef": "Nb Avis"
+              "nativeQueryRef": "Nb Avis",
+              "displayName": "Avis"
             }
           ]
         }

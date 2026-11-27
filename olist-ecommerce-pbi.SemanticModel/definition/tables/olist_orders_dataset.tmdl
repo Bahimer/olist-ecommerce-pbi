@@ -1,8 +1,16 @@
 table olist_orders_dataset
 	lineageTag: 600a38e9-b0dc-403e-a371-290cd0817abb
 
+	measure 'Commandes Année Précédente' = CALCULATE([Nb Commandes], SAMEPERIODLASTYEAR(DimDate[Date]))
+		formatString: #,0
+		lineageTag: bfb286b2-61b4-44fe-8d62-7f313068a52b
+
+	measure 'Croissance Commandes YoY %' = DIVIDE([Nb Commandes] - [Commandes Année Précédente], [Commandes Année Précédente])
+		formatString: +0.0 %;-0.0 %;0.0 %
+		lineageTag: ebf47e2e-e696-45c5-9a8b-c01113136021
+
 	measure 'Nb Commandes' = DISTINCTCOUNT(olist_orders_dataset[order_id])
-		formatString: 0
+		formatString: #,0
 		lineageTag: 61027088-88ac-4879-ba9b-d4af0fac10c7
 
 	measure 'CA Total' = SUM(olist_order_items_dataset[price])
@@ -18,7 +26,7 @@ table olist_orders_dataset
 		lineageTag: f8541be8-1cc3-4c19-b2ec-fedd1e3c1df9
 
 	measure 'Nb Clients Uniques' = DISTINCTCOUNT(olist_customers_dataset[customer_unique_id])
-		formatString: 0
+		formatString: #,0
 		lineageTag: db2f425d-8321-4d9e-9a0f-11f707d97834
 
 	measure 'CA Total YTD' = TOTALYTD([CA Total], DimDate[Date])

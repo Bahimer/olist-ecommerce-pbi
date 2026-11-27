@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "24e4f9d1d207b4611600",
   "position": {
-    "x": 16,
+    "x": 16.0,
     "y": 88,
-    "z": 1000,
+    "z": 500,
     "height": 104,
-    "width": 618.0,
-    "tabOrder": 1000
+    "width": 240.0,
+    "tabOrder": 500
   },
   "visual": {
     "visualType": "card",
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "olist_sellers_dataset.Nb Vendeurs Actifs",
-              "nativeQueryRef": "Nb Vendeurs Actifs"
+              "nativeQueryRef": "Nb Vendeurs Actifs",
+              "displayName": "Vendeurs actifs"
             }
           ]
         }

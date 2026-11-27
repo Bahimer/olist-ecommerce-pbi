@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "ff5e220a2cd3a210265c",
   "position": {
-    "x": 961.0,
+    "x": 1066.0,
     "y": 88,
-    "z": 4000,
+    "z": 505,
     "height": 104,
-    "width": 303.0,
-    "tabOrder": 4000
+    "width": 198.0,
+    "tabOrder": 505
   },
   "visual": {
     "visualType": "card",
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "olist_order_reviews_dataset.Note Moyenne Avis",
-              "nativeQueryRef": "Note Moyenne Avis"
+              "nativeQueryRef": "Note Moyenne Avis",
+              "displayName": "Note moyenne (/5)"
             }
           ]
         }

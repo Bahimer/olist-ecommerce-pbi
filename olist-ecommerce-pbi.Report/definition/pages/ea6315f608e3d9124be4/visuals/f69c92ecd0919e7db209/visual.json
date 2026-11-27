@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "f69c92ecd0919e7db209",
   "position": {
-    "x": 646.0,
+    "x": 268.0,
     "y": 88,
-    "z": 2000,
+    "z": 501,
     "height": 104,
-    "width": 618.0,
-    "tabOrder": 2000
+    "width": 240.0,
+    "tabOrder": 501
   },
   "visual": {
     "visualType": "card",
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "olist_sellers_dataset.Nb Articles Vendus",
-              "nativeQueryRef": "Nb Articles Vendus"
+              "nativeQueryRef": "Nb Articles Vendus",
+              "displayName": "Articles vendus"
             }
           ]
         }

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "kpiTenCmdYoY",
+  "position": {
+    "x": 1024.0,
+    "y": 88,
+    "z": 504,
+    "width": 240.0,
+    "height": 104,
+    "tabOrder": 504
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "olist_orders_dataset"
+                    }
+                  },
+                  "Property": "Croissance Commandes YoY %"
+                }
+              },
+              "queryRef": "olist_orders_dataset.Croissance Commandes YoY %",
+              "nativeQueryRef": "Croissance Commandes YoY %",
+              "displayName": "Croissance des commandes vs N-1"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

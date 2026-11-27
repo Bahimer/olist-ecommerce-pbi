@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "olist_orders_dataset.CA Total",
-              "nativeQueryRef": "CA Total"
+              "nativeQueryRef": "CA Total",
+              "displayName": "Chiffre d'affaires"
             }
           ]
         },

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "kpiAccClients",
+  "position": {
+    "x": 436.0,
+    "y": 88,
+    "z": 502,
+    "width": 198.0,
+    "height": 104,
+    "tabOrder": 502
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "olist_orders_dataset"
+                    }
+                  },
+                  "Property": "Nb Clients Uniques"
+                }
+              },
+              "queryRef": "olist_orders_dataset.Nb Clients Uniques",
+              "nativeQueryRef": "Nb Clients Uniques",
+              "displayName": "Clients uniques"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

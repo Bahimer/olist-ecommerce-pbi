@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "kpiSatAvis",
+  "position": {
+    "x": 16.0,
+    "y": 88,
+    "z": 500,
+    "width": 240.0,
+    "height": 104,
+    "tabOrder": 500
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "olist_order_reviews_dataset"
+                    }
+                  },
+                  "Property": "Nb Avis"
+                }
+              },
+              "queryRef": "olist_order_reviews_dataset.Nb Avis",
+              "nativeQueryRef": "Nb Avis",
+              "displayName": "Avis"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "kpiVenTop",
+  "position": {
+    "x": 1024.0,
+    "y": 88,
+    "z": 504,
+    "width": 240.0,
+    "height": 104,
+    "tabOrder": 504
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "olist_sellers_dataset"
+                    }
+                  },
+                  "Property": "Part CA Top 10 Vendeurs %"
+                }
+              },
+              "queryRef": "olist_sellers_dataset.Part CA Top 10 Vendeurs %",
+              "nativeQueryRef": "Part CA Top 10 Vendeurs %",
+              "displayName": "Part du CA des 10 premiers vendeurs"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

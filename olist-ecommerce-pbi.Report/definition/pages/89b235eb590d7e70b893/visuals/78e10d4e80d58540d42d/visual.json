@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "78e10d4e80d58540d42d",
   "position": {
-    "x": 16,
+    "x": 520.0,
     "y": 88,
-    "z": 1000,
+    "z": 502,
     "height": 104,
-    "width": 303.0,
-    "tabOrder": 1000
+    "width": 240.0,
+    "tabOrder": 502
   },
   "visual": {
     "visualType": "card",
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "olist_orders_dataset.Croissance CA YoY %",
-              "nativeQueryRef": "Croissance CA YoY %"
+              "nativeQueryRef": "Croissance CA YoY %",
+              "displayName": "Croissance du CA vs N-1"
             }
           ]
         }
