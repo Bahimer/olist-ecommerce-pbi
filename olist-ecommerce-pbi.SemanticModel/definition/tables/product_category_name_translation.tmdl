@@ -21,7 +21,7 @@ table product_category_name_translation
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\Users\brmer\Desktop\PL300\archive\product_category_name_translation.csv"),[Delimiter=",", Columns=2, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(Web.Contents(OlistDataUrl, [RelativePath = "product_category_name_translation.csv"]),[Delimiter=",", Columns=2, Encoding=65001, QuoteStyle=QuoteStyle.None]),
 				    #"Type modifié" = Table.TransformColumnTypes(Source,{{"Column1", type text}, {"Column2", type text}}),
 				    #"En-têtes promus" = Table.PromoteHeaders(#"Type modifié", [PromoteAllScalars=true]),
 				    #"Type modifié1" = Table.TransformColumnTypes(#"En-têtes promus",{{"product_category_name", type text}, {"product_category_name_english", type text}})

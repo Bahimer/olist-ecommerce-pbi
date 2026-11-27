@@ -1,0 +1,7 @@
+expression OlistDataUrl = "https://raw.githubusercontent.com/olist/work-at-olist-data/master/datasets/" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 70380600-4373-4f41-965b-532cc76a6dc9
+
+	annotation PBI_ResultType = Text
+
+	annotation PBI_NavigationStepName = Navigation
+

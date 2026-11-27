@@ -71,7 +71,7 @@ table olist_order_items_dataset
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\Users\brmer\Desktop\PL300\archive\olist_order_items_dataset.csv"),[Delimiter=",", Columns=7, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(Web.Contents(OlistDataUrl, [RelativePath = "olist_order_items_dataset.csv"]),[Delimiter=",", Columns=7, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"En-têtes promus" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Type modifié avec paramètres régionaux" = Table.TransformColumnTypes(#"En-têtes promus", {{"price", type number}, {"freight_value", type number}}, "en-US"),
 				    #"Type modifié" = Table.TransformColumnTypes(#"Type modifié avec paramètres régionaux",{{"shipping_limit_date", type datetime}})

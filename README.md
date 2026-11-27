@@ -26,6 +26,19 @@ Le modèle suit un schéma en étoile classique :
 | Vendeurs | Top 10 vendeurs, decomposition tree par catégorie |
 | Satisfaction | Notes clients, délais de livraison, taux de retard |
 
+## Actualiser le rapport sur n'importe quel PC
+
+Les requêtes Power Query ne dépendent plus d'un dossier local : les 9 CSV sont lus directement depuis le dépôt public d'Olist sur GitHub, via le paramètre `OlistDataUrl` :
+
+```
+https://raw.githubusercontent.com/olist/work-at-olist-data/master/datasets/
+```
+
+1. Cloner le dépôt (ou télécharger le ZIP) et ouvrir `olist-ecommerce-pbi.pbip`.
+2. Cliquer sur **Actualiser**. Au premier lancement, Power BI demande l'accès à la source web : choisir **Anonyme**, niveau **Public**.
+
+Pour travailler hors ligne avec des CSV en local, il suffit de remplacer la source dans les requêtes par `File.Contents` ou de pointer `OlistDataUrl` vers un autre hébergement des mêmes fichiers.
+
 ## Stack
 
 Power BI Desktop · DAX · Power Query · format `.pbip` (versionnable en TMDL)

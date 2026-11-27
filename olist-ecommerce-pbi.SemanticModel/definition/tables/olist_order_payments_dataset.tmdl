@@ -49,7 +49,7 @@ table olist_order_payments_dataset
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\Users\brmer\Desktop\PL300\archive\olist_order_payments_dataset.csv"),[Delimiter=",", Columns=5, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(Web.Contents(OlistDataUrl, [RelativePath = "olist_order_payments_dataset.csv"]),[Delimiter=",", Columns=5, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"En-têtes promus" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"order_id", type text}, {"payment_sequential", Int64.Type}, {"payment_type", type text}, {"payment_installments", Int64.Type}, {"payment_value", type text}}),
 				    #"Type modifié avec paramètres régionaux" = Table.TransformColumnTypes(#"Type modifié", {{"payment_value", type number}}, "en-US")

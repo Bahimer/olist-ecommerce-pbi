@@ -50,7 +50,7 @@ table olist_geolocation_dataset
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\Users\brmer\Desktop\PL300\archive\olist_geolocation_dataset.csv"),[Delimiter=",", Columns=5, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(Web.Contents(OlistDataUrl, [RelativePath = "olist_geolocation_dataset.csv"]),[Delimiter=",", Columns=5, Encoding=65001, QuoteStyle=QuoteStyle.None]),
 				    #"En-têtes promus" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"geolocation_zip_code_prefix", Int64.Type}, {"geolocation_lat", type text}, {"geolocation_lng", type text}, {"geolocation_city", type text}, {"geolocation_state", type text}}),
 				    #"Type modifié avec paramètres régionaux" = Table.TransformColumnTypes(#"Type modifié", {{"geolocation_lat", type number}, {"geolocation_lng", type number}}, "en-US")
