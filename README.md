@@ -1,6 +1,6 @@
 # Olist E-Commerce — Projet Power BI
 
-Projet de préparation à la certification **Microsoft PL-300 (Power BI Data Analyst)**, construit sur le jeu de données public [Brazilian E-Commerce by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) (100 000 commandes, 2016-2018).
+Rapport Power BI de bout en bout, construit pendant la préparation de la certification **Microsoft PL-300 (Power BI Data Analyst)**, sur le jeu de données public [Brazilian E-Commerce by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) (100 000 commandes, 2016-2018).
 
 ## Aperçu
 
@@ -40,6 +40,10 @@ Le modèle suit un schéma en étoile classique :
 | Fiche vendeur | Page d'extraction (drillthrough) : KPI, CA mensuel et catégories d'un vendeur |
 
 Filtres synchronisés entre les pages (année, État du client), filtres catégorie et État du vendeur sur la page Vendeurs. Thème personnalisé (`StaticResources/RegisteredResources/OlistTheme.json`).
+
+## Sécurité au niveau des lignes (RLS)
+
+Deux rôles statiques, `Responsable régional SP` et `Responsable régional RJ`, filtrent `olist_customers_dataset[customer_state]`. Grâce à la relation bidirectionnelle clients ↔ commandes, le filtre se propage aux commandes, aux articles, aux paiements et aux avis. Test dans Power BI Desktop : **Modélisation › Voir comme**.
 
 ## Actualiser le rapport sur n'importe quel PC
 

@@ -23,5 +23,8 @@ ref table olist_sellers_dataset
 ref table product_category_name_translation
 ref table DimDate
 
+ref role 'Responsable régional SP'
+ref role 'Responsable régional RJ'
+
 ref cultureInfo fr-FR
 

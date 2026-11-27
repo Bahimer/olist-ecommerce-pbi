@@ -1,0 +1,5 @@
+role 'Responsable régional RJ'
+	modelPermission: read
+
+	tablePermission olist_customers_dataset = [customer_state] = "RJ"
+
