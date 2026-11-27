@@ -36,7 +36,7 @@ Le modèle suit un schéma en étoile classique :
 | Accueil | 6 KPI (CA, commandes, clients uniques, panier moyen, frais de port, note), CA mensuel, CA par État |
 | Tendances | CA et commandes vs année précédente, croissance YoY |
 | Vendeurs | KPI vendeurs, top 10 par CA, arbre de décomposition par catégorie |
-| Satisfaction | Distribution des notes, taux de retard, délai de livraison vs note par vendeur |
+| Satisfaction | Distribution des notes, délai de livraison vs note par vendeur |
 | Fiche vendeur | Page d'extraction (drillthrough) : KPI, CA mensuel et catégories d'un vendeur |
 
 Filtres synchronisés entre les pages (année, État du client), filtres catégorie et État du vendeur sur la page Vendeurs. Thème personnalisé (`StaticResources/RegisteredResources/OlistTheme.json`).
